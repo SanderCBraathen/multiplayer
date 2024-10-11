@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://cta1buhua78xm"]
+[gd_scene load_steps=4 format=3 uid="uid://cta1buhua78xm"]
 
 [ext_resource type="Script" path="res://multiplayer_test.gd" id="1_crra5"]
 [ext_resource type="PackedScene" uid="uid://b00mgicc0ffqo" path="res://player_basic.tscn" id="2_ysvw8"]
+[ext_resource type="PackedScene" uid="uid://bqnehawbe0wcn" path="res://bullet.tscn" id="3_5nifq"]
 
 [node name="multiplayer_test" type="Node2D"]
 script = ExtResource("1_crra5")
 player_scene = ExtResource("2_ysvw8")
+projectile_scene = ExtResource("3_5nifq")
 
 [node name="Host" type="Button" parent="."]
 offset_right = 8.0
