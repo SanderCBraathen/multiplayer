@@ -22,3 +22,5 @@ replication_config = SubResource("SceneReplicationConfig_cw6ei")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_0pwg6")
+
+[node name="Camera2D" type="Camera2D" parent="."]
