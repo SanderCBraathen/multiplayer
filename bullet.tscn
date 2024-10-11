@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://bqnehawbe0wcn"]
+
+[ext_resource type="Script" path="res://projectile.gd" id="1_jwddw"]
+[ext_resource type="Texture2D" uid="uid://cnjda45a8kdet" path="res://icon.svg" id="2_jjvbu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_56vvi"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_pg0gy"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+
+[node name="bullet" type="Area2D"]
+script = ExtResource("1_jwddw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_56vvi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_jjvbu")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_pg0gy")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
